@@ -38,11 +38,10 @@ function priceCalculation(elem) {
         index = 0,
         options = [];
 
-        if (elem.name === 'option' && elem.checked) {
-            console.log(elem.checked);
-        document.querySelector('#mobileTemplates').disabled = false;
+        if (elem.getAttribute('id') === 'adapt' && elem.checked) {
+            document.querySelector('#mobileTemplates').disabled = false;
 
-        } else if (elem.name === 'option' && elem.checked === false) {
+        } else if (elem.getAttribute('id') === 'adapt' && elem.checked === false) {
             document.querySelector('#mobileTemplates').disabled = true;
         }
 
@@ -50,6 +49,7 @@ function priceCalculation(elem) {
         for (const item of formCalculate.elements) {
             if (item.type === 'checkbox') {
                 item.checked = false;
+                document.querySelector('#mobileTemplates').disabled = true;
             }
         }
         hideElem(fastRange);
