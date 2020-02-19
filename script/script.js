@@ -43,6 +43,7 @@ function priceCalculation(elem) {
 
         } else if (elem.getAttribute('id') === 'adapt' && elem.checked === false) {
             document.querySelector('#mobileTemplates').disabled = true;
+            document.querySelector('#mobileTemplates').checked = false;
         }
 
     if (elem.name === 'whichSite') {
