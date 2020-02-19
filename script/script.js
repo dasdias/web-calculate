@@ -51,7 +51,7 @@ function priceCalculation(elem) {
         for (const item of formCalculate.elements) {
             if (item.type === 'checkbox') {
                 item.checked = false;
-                document.querySelector('#mobileTemplates').disabled = true;
+                mobileTemplates.disabled = true;
             }
         }
         hideElem(fastRange);
