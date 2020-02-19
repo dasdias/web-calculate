@@ -21,9 +21,10 @@ const startButton = document.querySelector('.start-button'),
     endButton = document.querySelector('.end-button'),
     total = document.querySelector('.total'),
     fastRange = document.querySelector('.fast-range'),
-    totalPriceSum = document.querySelector('.total_price__sum');
+    totalPriceSum = document.querySelector('.total_price__sum'),
+    mobileTemplates = document.getElementById('mobileTemplates');
 
-console.dir(startButton);
+console.dir(mobileTemplates);
 
 function showElem(elem) {
     elem.style.display = "block";
@@ -39,11 +40,11 @@ function priceCalculation(elem) {
         options = [];
 
         if (elem.getAttribute('id') === 'adapt' && elem.checked) {
-            document.querySelector('#mobileTemplates').disabled = false;
+            mobileTemplates.disabled = false;
 
         } else if (elem.getAttribute('id') === 'adapt' && elem.checked === false) {
-            document.querySelector('#mobileTemplates').disabled = true;
-            document.querySelector('#mobileTemplates').checked = false;
+            mobileTemplates.disabled = true;
+            mobileTemplates.checked = false;
         }
 
     if (elem.name === 'whichSite') {
