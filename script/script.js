@@ -29,7 +29,11 @@ const startButton = document.querySelector('.start-button'),
     typeSite = document.querySelector('.type-site'),
     maxDeadline = document.querySelector('.max-deadline'),
     rangeDeadline = document.querySelector('.range-deadline'),
-    deadlineValue = document.querySelector('.deadline-value');
+    deadlineValue = document.querySelector('.deadline-value'),
+    desktopTemplatesValue = document.querySelector('.desktopTemplates_value'),
+    adaptValue = document.querySelector('.adapt_value'),
+    mobileTemplatesValue = document.querySelector('.mobileTemplates_value'),
+    editableValue = document.querySelector('.editable_value');
 
 
     function declOfNum(n, titles) {
@@ -63,6 +67,37 @@ function priceCalculation(elem) {
         site = '',
         maxDeadlineDay = DATA.deadlineDay[index][1],
         minDeadlineDay = DATA.deadlineDay[index][0];
+        
+        if (elem.checked && elem.getAttribute('name') === 'option') {
+            if (elem.value === 'desktopTemplates') {
+                desktopTemplatesValue.textContent = 'Да';
+            } 
+            if (elem.value === 'adapt') {
+                adaptValue.textContent = 'Да';
+            } 
+            if (elem.value === 'mobileTemplates') {
+                mobileTemplatesValue.textContent = 'Да';
+            } 
+            if (elem.value === 'editable') {
+                editableValue.textContent = 'Да';
+            } 
+            console.log(elem.value);
+            
+        }
+        if (elem.checked === false && elem.getAttribute('name') === 'option') {
+            if (elem.value === 'desktopTemplates') {
+                desktopTemplatesValue.textContent = 'Нет';
+            } 
+            if (elem.value === 'adapt') {
+                adaptValue.textContent = 'Нет';
+            } 
+            if (elem.value === 'mobileTemplates' || !elem.checked) {
+                mobileTemplatesValue.textContent = 'Нет';
+            } 
+            if (elem.value === 'editable') {
+                editableValue.textContent = 'Нет';
+            } 
+        }
 
         if (elem.getAttribute('id') === 'adapt' && elem.checked) {
             mobileTemplates.disabled = false;
