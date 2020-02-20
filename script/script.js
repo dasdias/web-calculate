@@ -112,6 +112,11 @@ function priceCalculation(elem) {
             if (item.type === 'checkbox') {
                 item.checked = false;
                 mobileTemplates.disabled = true;
+
+                desktopTemplatesValue.textContent = 'Нет';
+                adaptValue.textContent = 'Нет';
+                mobileTemplatesValue.textContent = 'Нет';
+                editableValue.textContent = 'Нет';
             }
         }
         hideElem(fastRange);
